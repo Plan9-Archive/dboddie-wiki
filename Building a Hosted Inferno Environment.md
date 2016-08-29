@@ -26,19 +26,23 @@ This enables a 32-bit build of the hosted environment to be compiled and run on 
 At the command line, enter the *inferno-os* directory. The *mkconfig* file contains information about the
 host and the target, such as the processor architecture and the location of the root of the sources.
 Since we will initially create a hosted environment, we define the architectures to be the same. For example,
-when compiling under GNU/Linux on i386 or amd64, replace the original definitions in the *mkconfig* file with the following:
+when compiling under GNU/Linux on i386 or amd64, replace the original definitions for *ROOT*, *SYSHOST* and *OBJTYPE* in the *mkconfig* file with the following:
 ```
 #!bash
 
-ROOT=$PWD
-SYSHOST=Linux
-OBJTYPE=386
+# In the mkconfig file:
+ROOT=$INFERNO_ROOT
+SYSHOST=$SYSHOST
+OBJTYPE=$OBJTYPE
 ```
 
 We can now, from the *inferno-os* directory, build the *mk* tool for the **host**:
 ```
 #!bash
 
+export INFERNO_ROOT=$PWD
+export SYSHOST=Linux
+export OBJTYPE=386
 ./makemk.sh
 ```
 
@@ -48,8 +52,12 @@ mk binary built successfully!
 ```
 
 We can now build the environment, but first we need to ensure that the *mk* tool we have created can be found
-during the build. From the same *inferno-os* directory as before, run the following commands :
+during the build. From the same *inferno-os* directory as before, run the following commands:
 ```
-export PATH=$PWD/Linux/386/bin:$PATH
-mk all
+#!bash
+
+export PATH=$INFERNO_ROOT/$SYSHOST/$OBJTYPE/bin:$PATH
+sed -i s/'-fno-aggressive-loop-optimizations'// mkfiles/mkfile-$SYSHOST-$OBJTYPE
+mkdir Inferno/$OBJTYPE/lib
+mk install
 ```
