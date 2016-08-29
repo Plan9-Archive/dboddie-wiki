@@ -88,3 +88,18 @@ To resolve this, run [the make-install-root.sh script](make-install-root.sh) scr
 
 make-install-root.sh $INFERNO_ROOT hosted
 ```
+
+You can now use the new installation with this command:
+```
+#!bash
+
+emu -r hosted 'wm/wm'
+```
+or, if you only want a shell:
+```
+#!bash
+
+emu -r hosted
+```
+
+This environment can be used to prepare resources that will be included in a native Inferno build.
