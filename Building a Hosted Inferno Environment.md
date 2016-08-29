@@ -7,7 +7,7 @@ build a hosted environment in order to prepare the resources needed by a native 
 We refer to the native version of Inferno as the **target** and the machine we use to compile it as the
 **host**.
 
-## Fetching Build Dependencies
+## Fetching build dependencies
 
 When building on Debian GNU/Linux, some development packages will need to be installed. In addition, amd64
 architecture hosts need to enable multiarch and i386 support. This can be done with the following commands:
@@ -36,7 +36,7 @@ SYSHOST=$SYSHOST
 OBJTYPE=$OBJTYPE
 ```
 
-We can now, from the *inferno-os* directory, build the *mk* tool for the **host**:
+We can now, from the *inferno-os* directory, build the *mk* tool for the **host** with these commands:
 ```
 #!bash
 
@@ -60,4 +60,31 @@ export PATH=$INFERNO_ROOT/$SYSHOST/$OBJTYPE/bin:$PATH
 sed -i s/'-fno-aggressive-loop-optimizations'// mkfiles/mkfile-$SYSHOST-$OBJTYPE
 mkdir Inferno/$OBJTYPE/lib
 mk install
+```
+The hosted environment is almost ready to use. Before trying it, we need to create a couple of directories:
+```
+#!bash
+
+cp -r usr/inferno usr/$USER
+mkdir tmp
+```
+
+Now you can test it by running the following command:
+```
+#!bash
+
+emu 'wm/wm'
+```
+
+This should open a window showing Inferno's graphical environment which you can explore if you like. Simply
+close the window when you are finished.
+
+## Creating a separate installation
+
+It can be confusing to have all the source directories in the root directory of the hosted environment.
+To resolve this, run [the make-install-root.sh script](make-install-root.sh) script, passing the locations of the *inferno-os* directory and the new directory that will host the environment, as in the following example:
+```
+#!bash
+
+make-install-root.sh $INFERNO_ROOT hosted
 ```
