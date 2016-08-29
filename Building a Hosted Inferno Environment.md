@@ -7,6 +7,20 @@ build a hosted environment in order to prepare the resources needed by a native 
 We refer to the native version of Inferno as the **target** and the machine we use to compile it as the
 **host**.
 
+## Fetching Build Dependencies
+
+When building on Debian GNU/Linux, some development packages will need to be installed. In addition, amd64
+architecture hosts need to enable multiarch and i386 support. This can be done with the following commands:
+```
+#!bash
+
+dpkg --add-architecture i386
+apt-get update
+add-get install multiarch-support libc6-dev-i386 libx11-dev:i386 libxext-dev:i386
+```
+
+This enables a 32-bit build of the hosted environment to be compiled and run on the host.
+
 ## Configuring the Hosted Build
 
 At the command line, enter the *inferno-os* directory. The *mkconfig* file contains information about the
@@ -26,4 +40,16 @@ We can now, from the *inferno-os* directory, build the *mk* tool for the **host*
 #!bash
 
 ./makemk.sh
+```
+
+This should produce lots of compiler output but, if successful, finish with the following message:
+```
+mk binary built successfully!
+```
+
+We can now build the environment, but first we need to ensure that the *mk* tool we have created can be found
+during the build. From the same *inferno-os* directory as before, run the following commands :
+```
+export PATH=$PWD/Linux/386/bin:$PATH
+mk all
 ```
