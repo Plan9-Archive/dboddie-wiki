@@ -8,7 +8,7 @@ well as information about the build system, boot process, device drivers and fil
 Inferno 
 
 1. [Downloading the Inferno sources](Downloading the Inferno Sources)
-1. [Building a Hosted Environment](BuildingHostedInferno)
+1. [Building a Hosted Environment](Building a Hosted Inferno Environment)
 1. [Configuring a Native Build](ConfiguringNativeBuild)
 
 ## Cloning this Wiki
