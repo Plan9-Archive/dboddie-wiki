@@ -9,7 +9,7 @@ Inferno
 
 1. [Downloading the Inferno sources](Downloading the Inferno Sources)
 1. [Building a Hosted Environment](Building a Hosted Inferno Environment)
-1. [Configuring a Native Build](ConfiguringNativeBuild)
+1. [Configuring a Native Build](Configuring a Native Build)
 
 ## Cloning this Wiki
 
