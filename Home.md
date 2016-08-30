@@ -1,7 +1,10 @@
 # Inferno
 
-This Wiki aims to provide instructions for configuring, building and installing Inferno on various devices, as
-well as information about the build system, boot process, device drivers and file system layout. The focus is on running Inferno on real hardware rather than as a hosted environment on some other operating system.
+This Wiki aims to provide instructions for configuring, building and installing
+Inferno on various devices, as well as information about the build system, boot
+process, device drivers and file system layout. The focus is on running Inferno
+on real hardware rather than as a hosted environment on some other operating
+system.
 
 ## Overview
 
