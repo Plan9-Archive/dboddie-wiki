@@ -23,7 +23,7 @@ cd os/pc
 
 For some reason the configuration file contains references to directories that
 do not exist in the standard *inferno-os* source directory. Copy the
-[fix-pc-build.py](fix-pc-build.py) script into the current directory and run
+[fix-pc-build.py](tools/fix-pc-build.py) script into the current directory and run
 it:
 ```
 #!bash
@@ -83,6 +83,8 @@ The disk image can be tested using qemu:
 
 qemu -m 512M -fda $INFERNO_ROOT/os/pc/disk
 ```
+
+This should boot to a shell prompt.
 
 ## References
 

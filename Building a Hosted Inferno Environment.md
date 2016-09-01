@@ -82,7 +82,9 @@ close the window when you are finished.
 ## Creating a separate installation
 
 It can be confusing to have all the source directories in the root directory of the hosted environment.
-To resolve this, run [the make-install-root.sh script](make-install-root.sh) script, passing the locations of the *inferno-os* directory and the new directory that will host the environment, as in the following example:
+To resolve this, run [the make-install-root.sh script](tools/make-install-root.sh)
+script, passing the locations of the *inferno-os* directory and the new
+directory that will host the environment, as in the following example:
 ```
 #!bash
 
