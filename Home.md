@@ -14,6 +14,16 @@ Inferno
 1. [Building a Hosted Environment](Building a Hosted Inferno Environment)
 1. [Configuring a Native Build](Configuring a Native Build)
 
+## Ports
+
+The following is a list of native ports of Inferno to various devices with
+source code publicly available:
+
+* [Marvell Kirkwood/Sheevaplug](https://bitbucket.org/mjl/inferno-kirkwood)
+* [Nintendo DS](https://bitbucket.org/mjl/inferno-ds)
+* [OpenMoko Neo Freerunner](https://code.google.com/archive/p/inferno-openmoko/)
+* [Raspberry Pi](https://bitbucket.org/infpi/inferno-rpi)
+
 ## Cloning this Wiki
 
 This Wiki is written in [Markdown](http://daringfireball.net/projects/markdown/) syntax and stored in a Mercurial repository. You can use Mercurial to clone it:
