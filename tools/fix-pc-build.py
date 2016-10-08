@@ -13,8 +13,8 @@ if __name__ == "__main__":
     
     try:
         t = open(config_file).read()
-        t = t.replace("\t/n\n", "\t/n\t/")
-        t = t.replace("\t/n/remote\n", "\t/n/remote\t/")
+        t = t.replace("\t/n\n", "\t/n\t/\n")
+        t = t.replace("\t/n/remote\n", "\t/n/remote\t/\n")
         t = t.replace("wminit", "shell")
         t = t.replace("consoleprint=0", "consoleprint=1")
         t += "\t/dis/lib/arg.dis\n"
