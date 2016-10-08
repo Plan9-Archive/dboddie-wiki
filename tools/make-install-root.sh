@@ -2,6 +2,11 @@
 
 set -e
 
+if [ -z $1 ] || [ -z $2 ]; then
+    echo "Usage: `basename $0` <source installation directory> <hosted installation directory>"
+    exit 1
+fi
+
 # This is used if you want to run emu from within an installation directory.
 echo "Creating $2 from $1"
 
@@ -11,6 +16,7 @@ mkdir -p $2/n/client/chan
 mkdir -p $2/n/client/dev
 mkdir -p $2/n/disk
 mkdir -p $2/n/dist
+mkdir -p $2/n/dos
 mkdir -p $2/n/dump
 mkdir -p $2/n/ftp
 mkdir -p $2/n/gridfs
@@ -34,4 +40,4 @@ cp -r $1/usr $2/
 cp -r $1/usr/inferno/lib $2/usr/$USER/
 
 cd $2
-echo "Now run \"emu -r $2\""
+echo "Now run \"emu -r $2\" to try the installation."
