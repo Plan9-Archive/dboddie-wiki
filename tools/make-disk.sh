@@ -51,4 +51,4 @@ cat $INFERNO_HOSTED_ROOT/fsdisk/start.img $INFERNO_HOSTED_ROOT/fsdisk/9fat.part 
 
 echo "Disk image 'disk.img' created."
 echo "You can test the image with the following command:"
-echo "qemu -m 512M -drive file=disk.img -net user -net nic,model=rtl8139"
+echo "qemu -m 512M -drive file=$DISK_IMAGE -net user -net nic,model=rtl8139"
