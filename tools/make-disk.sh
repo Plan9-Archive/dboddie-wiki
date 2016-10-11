@@ -2,17 +2,18 @@
 
 set -e
 
-if [ -z $1 ] || [ -z $2 ] || [ -z $3 ] || [ -z $4 ]; then
-    echo "Usage: `basename $0` <Inferno source directory> <supplementary tools directory> <hosted installation directory> <disk image>"
+if [ -z $1 ] || [ -z $2 ] || [ -z $3 ]; then
+    echo "Usage: `basename $0` <Inferno source directory> <hosted installation directory> <disk image>"
     exit 1
 fi
 
 export THIS_DIR=$PWD
+THIS_FILE=`realpath $0`
 
 export INFERNO_ROOT=`realpath $1`
-export INFERNO_TOOLS=`realpath $2`
-export INFERNO_HOSTED_ROOT=`realpath $3`
-export DISK_IMAGE=`realpath $4`
+export INFERNO_TOOLS=`dirname $THIS_FILE`
+export INFERNO_HOSTED_ROOT=`realpath $2`
+export DISK_IMAGE=`realpath $3`
 
 export SYSHOST=Linux
 export OBJTYPE=386

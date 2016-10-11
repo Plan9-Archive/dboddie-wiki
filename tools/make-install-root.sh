@@ -40,4 +40,4 @@ cp -r $1/usr $2/
 cp -r $1/usr/inferno/lib $2/usr/$USER/
 
 cd $2
-echo "Now run \"emu -r $2\" to try the installation."
+#echo "Now run \"emu -r $2\" to try the installation."
