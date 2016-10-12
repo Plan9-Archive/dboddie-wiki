@@ -69,20 +69,12 @@ filing system.
 
 ## Testing the network connection
 
-
-
-```
-#!python
-
-import socket
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.bind(("", 8081))
-s.listen(1)
-response = s.accept()
-print response[0].recv(256)
-```
+We can test whether the system running in *qemu* is connected to the network
+by running a command to fetch the main page of the Inferno site:
 
 ```
 #!bash
-dial -A tcp!127.0.0.1!8081 { echo 'Hello\n' }
+dial -A tcp!www.inferno-os.org!80 { echo 'GET /'; cat >[1=2] }
 ```
+
+This should return the HTML of the main page.

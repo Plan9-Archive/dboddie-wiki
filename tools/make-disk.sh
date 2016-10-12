@@ -28,7 +28,7 @@ mkdir -p $INFERNO_HOSTED_ROOT/fsdisk/fs
 $INFERNO_TOOLS/extract_fs.py $DISK_IMAGE $INFERNO_HOSTED_ROOT/fsdisk/9fat.part \
                             $INFERNO_HOSTED_ROOT/fsdisk/fs.part
 
-$INFERNO_TOOLS/build-pc.sh $INFERNO_ROOT $INFERNO_TOOLS $INFERNO_HOSTED_ROOT
+$INFERNO_TOOLS/build-pc.sh $INFERNO_ROOT $INFERNO_TOOLS
 
 # Copy files into the hosted root so that the tools run using emu can access
 # them, copying them into the the FAT or KFS file systems.

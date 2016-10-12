@@ -12,6 +12,10 @@ x=`{cat /net/ipifc/clone}
 echo bind ether /net/ether0 > /net/ipifc/$x/ctl
 ip/dhcp /net/ipifc/$x
 
+echo 'Starting the DNS service...'
+ndb/cs
+ndb/dns
+
 echo 'Binding directories...'
 bind -b -c /n/kfs/acme /acme
 bind -b -c /n/kfs/appl /appl
