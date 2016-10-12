@@ -11,8 +11,10 @@ system.
 Inferno 
 
 1. [Downloading the Inferno sources](Downloading the Inferno Sources)
-1. [Building a Hosted Environment](Building a Hosted Inferno Environment)
-1. [Configuring a Native Build](Configuring a Native Build)
+2. [Building a Hosted Environment](Building a Hosted Inferno Environment)
+3. [Configuring a Native Build](Configuring a Native Build)
+4. [Configuring a Native Build](Configuring a Native Build)
+5. [Building a PC Disk Image](Building a PC Disk Image)
 
 ## Ports
 
