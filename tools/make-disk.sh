@@ -47,8 +47,8 @@ $INFERNO_ROOT/$SYSHOST/$OBJTYPE/bin/emu -c1 -r $INFERNO_HOSTED_ROOT sh.dis /fsdi
 set -e
 
 dd if=$DISK_IMAGE of=$INFERNO_HOSTED_ROOT/fsdisk/start.img bs=512 count=32 
-cat $INFERNO_HOSTED_ROOT/fsdisk/start.img $INFERNO_HOSTED_ROOT/fsdisk/9fat.part $INFERNO_HOSTED_ROOT/fsdisk/fs.part > disk.img
+cat $INFERNO_HOSTED_ROOT/fsdisk/start.img $INFERNO_HOSTED_ROOT/fsdisk/9fat.part $INFERNO_HOSTED_ROOT/fsdisk/fs.part > $DISK_IMAGE
 
-echo "Disk image 'disk.img' created."
+echo "Disk image '$DISK_IMAGE' created."
 echo "You can test the image with the following command:"
 echo "qemu -m 512M -drive file=$DISK_IMAGE -net user -net nic,model=rtl8139"
