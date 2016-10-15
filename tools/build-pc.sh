@@ -2,18 +2,19 @@
 
 set -e
 
-if [ -z $1 ] || [ -z $2 ]; then
-    echo "Usage: `basename $0` <Inferno source directory> <supplementary tools directory>"
+if [ -z $1 ]; then
+    echo "Usage: `basename $0` <Inferno source directory>"
     exit 1
 fi
 
 export THIS_DIR=$PWD
+THIS_FILE=`realpath $0`
 
 export INFERNO_ROOT=`realpath $1`
 export SYSHOST=Linux
 export OBJTYPE=386
 
-export INFERNO_TOOLS=`realpath $2`
+export INFERNO_TOOLS=`dirname $THIS_FILE`
 
 # Copy the init.sh file into the source installation so that it can be built
 # into the kernel image.

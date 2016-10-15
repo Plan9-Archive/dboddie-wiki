@@ -4,14 +4,16 @@ set -e
 
 # See https://umdrive.memphis.edu/blstuart/htdocs/inf_native.html for context.
 
-if [ -z $1 ] || [ -z $2 ]; then
-    echo "Usage: `basename $0` <Inferno source directory> <supplementary tools directory>"
+if [ -z $1 ]; then
+    echo "Usage: `basename $0` <Inferno source directory>"
     exit 1
 fi
 
 export THIS_DIR=$PWD
+THIS_FILE=`realpath $0`
+
 export INFERNO_ROOT=`realpath $1`
-export INFERNO_TOOLS=`realpath $2`
+export INFERNO_TOOLS=`dirname $THIS_FILE`
 export SYSHOST=Linux
 export OBJTYPE=386
 

@@ -3,11 +3,15 @@
 set -e
 
 if [ -z $1 ] || [ -z $2 ]; then
-    echo "Usage: `basename $0` <source installation directory> <hosted installation directory>"
+    echo "Usage: `basename $0` <source installation directory> <hosted installation directory> [--with-src]"
     exit 1
 fi
 
 # This is used if you want to run emu from within an installation directory.
+
+export INFERNO_ROOT=`realpath $1`
+export INFERNO_HOSTED_ROOT=`realpath $2`
+
 echo "Creating $2 from $1"
 
 mkdir -p $2
@@ -44,5 +48,11 @@ cp -r $1/services $2/
 cp -r $1/usr $2/
 cp -r $1/usr/inferno/lib $2/usr/$USER/
 
-cd $2
+#cd $2
 #echo "Now run \"emu -r $2\" to try the installation."
+
+if [ $3 == '--with-src' ]; then
+    echo "Archiving $1 to $INFERNO_HOSTED_ROOT/usr/inferno-os.tgz"
+    cd $INFERNO_ROOT
+    hg archive -t tgz $INFERNO_HOSTED_ROOT/usr/inferno-os.tgz
+fi
