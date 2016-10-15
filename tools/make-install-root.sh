@@ -10,7 +10,6 @@ fi
 # This is used if you want to run emu from within an installation directory.
 
 export INFERNO_ROOT=`realpath $1`
-export INFERNO_HOSTED_ROOT=`realpath $2`
 
 echo "Creating $2 from $1"
 
@@ -50,6 +49,8 @@ cp -r $1/usr/inferno/lib $2/usr/$USER/
 
 #cd $2
 #echo "Now run \"emu -r $2\" to try the installation."
+
+export INFERNO_HOSTED_ROOT=`realpath $2`
 
 if [ $3 == '--with-src' ]; then
     echo "Archiving $1 to $INFERNO_HOSTED_ROOT/usr/inferno-os.tgz"
