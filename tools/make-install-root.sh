@@ -52,8 +52,8 @@ cp -r $1/usr/inferno/lib $2/usr/$USER/
 
 export INFERNO_HOSTED_ROOT=`realpath $2`
 
-if [ $3 == '--with-src' ]; then
+if [ -n $3 ] && [ "$3" = '--with-src' ]; then
     echo "Archiving $1 to $INFERNO_HOSTED_ROOT/usr/inferno-os.tgz"
     cd $INFERNO_ROOT
-    hg archive -t tgz $INFERNO_HOSTED_ROOT/usr/inferno-os.tgz
+    hg archive -t tgz $INFERNO_HOSTED_ROOT/inferno-os.tgz
 fi
