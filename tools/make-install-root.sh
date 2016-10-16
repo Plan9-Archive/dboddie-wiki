@@ -7,7 +7,11 @@ if [ -z $1 ] || [ -z $2 ]; then
     exit 1
 fi
 
-# This is used if you want to run emu from within an installation directory.
+# This script is used if you want to run emu from within an installation
+# directory or want to prepare a file system for a disk image.
+
+export THIS_DIR=$PWD
+THIS_FILE=`realpath $0`
 
 export INFERNO_ROOT=`realpath $1`
 
@@ -55,5 +59,7 @@ export INFERNO_HOSTED_ROOT=`realpath $2`
 if [ -n $3 ] && [ "$3" = '--with-src' ]; then
     echo "Archiving $1 to $INFERNO_HOSTED_ROOT/usr/inferno-os.tgz"
     cd $INFERNO_ROOT
-    hg archive -t tgz $INFERNO_HOSTED_ROOT/inferno-os.tgz
+    hg archive -t tgz $INFERNO_HOSTED_ROOT/doc/inferno-os.tgz
+    cd $THIS_DIR
+    hg archive -t tgz $INFERNO_HOSTED_ROOT/doc/inferno-wiki.tgz
 fi
