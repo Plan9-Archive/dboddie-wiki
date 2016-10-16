@@ -9,7 +9,6 @@ time fcp -r /doc /n/kfs/doc
 time fcp -r /fonts /n/kfs/fonts
 time fcp -r /icons /n/kfs/icons
 #time fcp -r /include /n/kfs/include
-time fcp inferno-os* /n/kfs/
 time fcp -r /keydb /n/kfs/keydb
 time fcp -r /lib /n/kfs/lib
 time fcp -r /locale /n/kfs/locale
