@@ -14,6 +14,7 @@ export THIS_DIR=$PWD
 THIS_FILE=`realpath $0`
 
 export INFERNO_ROOT=`realpath $1`
+export INFERNO_TOOLS=`dirname $THIS_FILE`
 
 echo "Creating $2 from $1"
 
@@ -60,6 +61,6 @@ if [ -n $3 ] && [ "$3" = '--with-src' ]; then
     echo "Archiving $1 to $INFERNO_HOSTED_ROOT/usr/inferno-os.tgz"
     cd $INFERNO_ROOT
     hg archive -t tgz $INFERNO_HOSTED_ROOT/doc/inferno-os.tgz
-    cd $THIS_DIR
+    cd $INFERNO_TOOLS
     hg archive -t tgz $INFERNO_HOSTED_ROOT/doc/inferno-wiki.tgz
 fi
