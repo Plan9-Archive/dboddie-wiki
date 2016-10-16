@@ -15,11 +15,17 @@ export INFERNO_TOOLS=`dirname $THIS_FILE`
 export INFERNO_HOSTED_ROOT=`realpath $2`
 export DISK_IMAGE=`realpath $3`
 
+if [ -z $DISK_IMAGE ]; then
+    echo "Please create the disk image file '$3'."
+    exit 1
+fi
+
 export SYSHOST=Linux
 export OBJTYPE=386
 
 $INFERNO_TOOLS/build-pc-boot.sh $INFERNO_ROOT $INFERNO_TOOLS
 
+# Boot the floppy disk image with the hard disk image also attached.
 qemu -m 512M -fda $INFERNO_ROOT/os/pc/disk -hda $DISK_IMAGE -boot a
 
 mkdir -p $INFERNO_HOSTED_ROOT/fsdisk/9fat
