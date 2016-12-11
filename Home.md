@@ -15,6 +15,10 @@ Inferno
 3. [Configuring a Native Build](Configuring a Native Build)
 4. [Building a PC Disk Image](Building a PC Disk Image)
 
+Build Configuration
+
+1. [Build configuration files](Build Configuration Files)
+
 ## Ports
 
 The following is a list of native ports of Inferno to various devices with
