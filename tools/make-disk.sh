@@ -56,5 +56,6 @@ dd if=$DISK_IMAGE of=$INFERNO_HOSTED_ROOT/fsdisk/start.img bs=512 count=32
 cat $INFERNO_HOSTED_ROOT/fsdisk/start.img $INFERNO_HOSTED_ROOT/fsdisk/9fat.part $INFERNO_HOSTED_ROOT/fsdisk/fs.part > $DISK_IMAGE
 
 echo "Disk image '$DISK_IMAGE' created."
-echo "You can test the image with the following command:"
+echo "You should be able to test the image with one of the following commands:"
 echo "qemu -m 512M -drive file=$DISK_IMAGE -net user -net nic,model=rtl8139"
+echo "qemu-system-i386 -m 512M -drive file=$DISK_IMAGE -net user -net nic,model=rtl8139"
