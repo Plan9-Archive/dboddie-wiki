@@ -16,7 +16,7 @@ architecture hosts need to enable multiarch and i386 support. This can be done w
 
 dpkg --add-architecture i386
 apt-get update
-add-get install multiarch-support libc6-dev-i386 libx11-dev:i386 libxext-dev:i386
+apt-get install multiarch-support libc6-dev-i386 libx11-dev:i386 libxext-dev:i386
 ```
 
 This enables a 32-bit build of the hosted environment to be compiled and run on the host.
