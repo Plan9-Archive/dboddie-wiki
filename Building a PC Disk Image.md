@@ -55,12 +55,13 @@ image, so be aware that a window will pop up when this happens.
 ```
 
 If it finishes successfully, it should print a message informing you that you
-can run *qemu* to test it in the following way:
+can run *qemu* or *qemu-system-i386* to test it in the following way:
 
 ```
 #!bash
 
 qemu -m 512M -drive file=disk.img -net user -net nic,model=rtl8139
+qemu-system-i386 -m 512M -drive file=disk.img -net user -net nic,model=rtl8139
 ```
 
 Hopefully, this should boot successfully to a console prompt after obtaining
