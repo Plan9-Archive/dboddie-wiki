@@ -1,6 +1,7 @@
 # Configuring a Native Build
 
-With environment variables set up as described in [Building a Hosted Inferno Environment],
+With environment variables set up as described in
+[Building a Hosted Inferno Environment](Building a Hosted Inferno Environment),
 we can configure a native build.
 
 In principle, each of the platforms that can run Inferno natively is
