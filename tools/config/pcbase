@@ -61,9 +61,7 @@ link
 #	pppmedium ppp compress
 
 misc
-	vgas3	+cur vgasavage
-	vgamach64xx
-	cga
+	vgavmware
 
 	sdata	pci sdscsi
 	sd53c8xx	pci sdscsi
